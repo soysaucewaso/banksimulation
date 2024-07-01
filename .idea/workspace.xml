@@ -18,9 +18,16 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df6d8293-ecb8-4cd5-b685-a7e23e674b0b" name="Changes" comment="tried using pistache, discovered its multithreading doesn't work, either because of an issue with mac or with pistache will test">
+    <list default="true" id="df6d8293-ecb8-4cd5-b685-a7e23e674b0b" name="Changes" comment="tested threading, didnt work so reverting to see why">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backendapi/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/cmake-build-debug/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backendapi/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/cmake-build-debug/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backendapi/cmake-build-debug/CMakeFiles/backendapi.dir/playing.o" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/cmake-build-debug/CMakeFiles/backendapi.dir/playing.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backendapi/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backendapi/cmake-build-debug/backendapi" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/cmake-build-debug/backendapi" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backendapi/pistache/examples/http_server.cc" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/pistache/examples/http_server.cc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backendapi/pistache/examples/rest_server.cc" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/pistache/examples/rest_server.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backendapi/playing.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/playing.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +47,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -55,24 +63,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "cf.advertisement.text.has.clang-format": "true",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "nodejs_package_manager_path": "npm"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;cf.advertisement.text.has.clang-format&quot;: &quot;true&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/backendapi" />
     </key>
   </component>
-  <component name="RunManager" selected="CMake Application.testbackend">
+  <component name="RunManager" selected="CMake Application.backendapi">
     <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="CLION.EXTERNAL.BUILD" enabled="true" />
@@ -158,6 +166,7 @@
     <MESSAGE value="added folder for backend" />
     <MESSAGE value="removed .idea" />
     <MESSAGE value="tried using pistache, discovered its multithreading doesn't work, either because of an issue with mac or with pistache will test" />
-    <option name="LAST_COMMIT_MESSAGE" value="tried using pistache, discovered its multithreading doesn't work, either because of an issue with mac or with pistache will test" />
+    <MESSAGE value="tested threading, didnt work so reverting to see why" />
+    <option name="LAST_COMMIT_MESSAGE" value="tested threading, didnt work so reverting to see why" />
   </component>
 </project>
