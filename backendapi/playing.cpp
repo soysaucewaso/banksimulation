@@ -19,12 +19,13 @@ public:
 
 int main(){
     Address addr(Ipv4::any(), Port(9080));
-    auto opts = Http::Endpoint::options().threads(20);
+    auto opts = Http::Endpoint::options().threads(1);
 
     auto server = std::make_shared<Http::Endpoint>(addr);
     auto* serverPtr = &server;
     server->init(opts);
     server->setHandler(Http::make_handler<HelloHandler>());
+    std::cout << std::this_thread::get_id()<<std::endl;
     server->serve();
     return 0;
 }
