@@ -18,7 +18,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df6d8293-ecb8-4cd5-b685-a7e23e674b0b" name="Changes" comment="removed .idea">
+    <list default="true" id="df6d8293-ecb8-4cd5-b685-a7e23e674b0b" name="Changes" comment="tried using pistache, discovered its multithreading doesn't work, either because of an issue with mac or with pistache will test">
       <change beforePath="$PROJECT_DIR$/backendapi/pistache/examples/http_server.cc" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/pistache/examples/http_server.cc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backendapi/pistache/examples/rest_server.cc" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/pistache/examples/rest_server.cc" afterDir="false" />
     </list>
@@ -39,7 +39,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/backendapi/pistache" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -114,7 +114,7 @@
       <option name="presentableId" value="Default" />
       <updated>1719702807976</updated>
       <workItem from="1719702809224" duration="30000" />
-      <workItem from="1719702972343" duration="13182000" />
+      <workItem from="1719702972343" duration="13488000" />
     </task>
     <task id="LOCAL-00001" summary="added folder for backend">
       <created>1719703034323</created>
@@ -157,6 +157,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added folder for backend" />
     <MESSAGE value="removed .idea" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed .idea" />
+    <MESSAGE value="tried using pistache, discovered its multithreading doesn't work, either because of an issue with mac or with pistache will test" />
+    <option name="LAST_COMMIT_MESSAGE" value="tried using pistache, discovered its multithreading doesn't work, either because of an issue with mac or with pistache will test" />
   </component>
 </project>
