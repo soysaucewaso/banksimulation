@@ -1,0 +1,4 @@
+/Users/sawyer/banksimulation/backendapi/cmake-build-debug/CMakeFiles/backendapi.dir
+/Users/sawyer/banksimulation/backendapi/cmake-build-debug/CMakeFiles/testbackend.dir
+/Users/sawyer/banksimulation/backendapi/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/sawyer/banksimulation/backendapi/cmake-build-debug/CMakeFiles/rebuild_cache.dir
