@@ -18,16 +18,21 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df6d8293-ecb8-4cd5-b685-a7e23e674b0b" name="Changes" comment="tested threading, didnt work so reverting to see why">
+    <list default="true" id="df6d8293-ecb8-4cd5-b685-a7e23e674b0b" name="Changes" comment="finally figured out threading on pistache would work if a thread waited for some time after sending a response">
+      <change afterPath="$PROJECT_DIR$/backendapi/bankrequests.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backendapi/bankrequests.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backendapi/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backendapi/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/cmake-build-debug/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backendapi/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/cmake-build-debug/.ninja_log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backendapi/cmake-build-debug/CMakeFiles/backendapi.dir/playing.o" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/cmake-build-debug/CMakeFiles/backendapi.dir/playing.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backendapi/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backendapi/cmake-build-debug/backendapi" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/cmake-build-debug/backendapi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backendapi/main.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backendapi/main.h" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/backendapi/pistache/examples/http_server.cc" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/pistache/examples/http_server.cc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backendapi/pistache/examples/rest_server.cc" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/pistache/examples/rest_server.cc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backendapi/playing.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/playing.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backendapi/playing.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/bankapiserver.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +51,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/backendapi/pistache" />
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -145,7 +150,14 @@
       <option name="project" value="LOCAL" />
       <updated>1719703544047</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="finally figured out threading on pistache would work if a thread waited for some time after sending a response">
+      <created>1719876115874</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1719876115874</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -167,6 +179,7 @@
     <MESSAGE value="removed .idea" />
     <MESSAGE value="tried using pistache, discovered its multithreading doesn't work, either because of an issue with mac or with pistache will test" />
     <MESSAGE value="tested threading, didnt work so reverting to see why" />
-    <option name="LAST_COMMIT_MESSAGE" value="tested threading, didnt work so reverting to see why" />
+    <MESSAGE value="finally figured out threading on pistache would work if a thread waited for some time after sending a response" />
+    <option name="LAST_COMMIT_MESSAGE" value="finally figured out threading on pistache would work if a thread waited for some time after sending a response" />
   </component>
 </project>
