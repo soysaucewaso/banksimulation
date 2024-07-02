@@ -46,10 +46,17 @@ cmake_ninja_workdir = /Users/sawyer/banksimulation/backendapi/cmake-build-debug/
 
 build cmake_object_order_depends_target_backendapi: phony || CMakeFiles/backendapi.dir
 
-build CMakeFiles/backendapi.dir/playing.o: CXX_COMPILER__backendapi_Debug /Users/sawyer/banksimulation/backendapi/playing.cpp || cmake_object_order_depends_target_backendapi
-  DEP_FILE = CMakeFiles/backendapi.dir/playing.o.d
+build CMakeFiles/backendapi.dir/bankapiserver.cpp.o: CXX_COMPILER__backendapi_Debug /Users/sawyer/banksimulation/backendapi/bankapiserver.cpp || cmake_object_order_depends_target_backendapi
+  DEP_FILE = CMakeFiles/backendapi.dir/bankapiserver.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -std=gnu++17
-  INCLUDES = -I/Users/sawyer/banksimulation/backendapi/pistache/include -I/opt/homebrew/Cellar/libevent/2.1.12_1/include
+  INCLUDES = -I/opt/homebrew/Cellar/libpqxx/7.9.1/include -I/opt/homebrew/Cellar/libevent/2.1.12_1/include -I/Users/sawyer/banksimulation/backendapi/pistache/include
+  OBJECT_DIR = CMakeFiles/backendapi.dir
+  OBJECT_FILE_DIR = CMakeFiles/backendapi.dir
+
+build CMakeFiles/backendapi.dir/bankrequests.cpp.o: CXX_COMPILER__backendapi_Debug /Users/sawyer/banksimulation/backendapi/bankrequests.cpp || cmake_object_order_depends_target_backendapi
+  DEP_FILE = CMakeFiles/backendapi.dir/bankrequests.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -std=gnu++17
+  INCLUDES = -I/opt/homebrew/Cellar/libpqxx/7.9.1/include -I/opt/homebrew/Cellar/libevent/2.1.12_1/include -I/Users/sawyer/banksimulation/backendapi/pistache/include
   OBJECT_DIR = CMakeFiles/backendapi.dir
   OBJECT_FILE_DIR = CMakeFiles/backendapi.dir
 
@@ -61,10 +68,10 @@ build CMakeFiles/backendapi.dir/playing.o: CXX_COMPILER__backendapi_Debug /Users
 #############################################
 # Link the executable backendapi
 
-build backendapi: CXX_EXECUTABLE_LINKER__backendapi_Debug CMakeFiles/backendapi.dir/playing.o | /opt/homebrew/lib/libpistache.dylib
+build backendapi: CXX_EXECUTABLE_LINKER__backendapi_Debug CMakeFiles/backendapi.dir/bankapiserver.cpp.o CMakeFiles/backendapi.dir/bankrequests.cpp.o | /opt/homebrew/lib/libpistache.dylib
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk
-  LINK_LIBRARIES = /opt/homebrew/lib/libpistache.dylib  -levent
-  LINK_PATH = -L/opt/homebrew/lib
+  LINK_LIBRARIES = -Wl,-rpath,/opt/homebrew/Cellar/libpqxx/7.9.1/lib -Wl,-rpath,/opt/homebrew/Cellar/libevent/2.1.12_1/lib  /opt/homebrew/lib/libpistache.dylib  -levent  -lpqxx
+  LINK_PATH = -L/opt/homebrew/Cellar/libpqxx/7.9.1/lib   -L/opt/homebrew/Cellar/libevent/2.1.12_1/lib
   OBJECT_DIR = CMakeFiles/backendapi.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -80,10 +87,10 @@ build backendapi: CXX_EXECUTABLE_LINKER__backendapi_Debug CMakeFiles/backendapi.
 
 build cmake_object_order_depends_target_testbackend: phony || CMakeFiles/testbackend.dir
 
-build CMakeFiles/testbackend.dir/pistache/examples/http_server.o: CXX_COMPILER__testbackend_Debug /Users/sawyer/banksimulation/backendapi/pistache/examples/http_server.cc || cmake_object_order_depends_target_testbackend
-  DEP_FILE = CMakeFiles/testbackend.dir/pistache/examples/http_server.o.d
+build CMakeFiles/testbackend.dir/pistache/examples/http_server.cc.o: CXX_COMPILER__testbackend_Debug /Users/sawyer/banksimulation/backendapi/pistache/examples/http_server.cc || cmake_object_order_depends_target_testbackend
+  DEP_FILE = CMakeFiles/testbackend.dir/pistache/examples/http_server.cc.o.d
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -std=gnu++17
-  INCLUDES = -I/Users/sawyer/banksimulation/backendapi/pistache/include -I/opt/homebrew/Cellar/libevent/2.1.12_1/include
+  INCLUDES = -I/opt/homebrew/Cellar/libpqxx/7.9.1/include -I/opt/homebrew/Cellar/libevent/2.1.12_1/include -I/Users/sawyer/banksimulation/backendapi/pistache/include
   OBJECT_DIR = CMakeFiles/testbackend.dir
   OBJECT_FILE_DIR = CMakeFiles/testbackend.dir/pistache/examples
 
@@ -95,10 +102,10 @@ build CMakeFiles/testbackend.dir/pistache/examples/http_server.o: CXX_COMPILER__
 #############################################
 # Link the executable testbackend
 
-build testbackend: CXX_EXECUTABLE_LINKER__testbackend_Debug CMakeFiles/testbackend.dir/pistache/examples/http_server.o | /opt/homebrew/lib/libpistache.dylib
+build testbackend: CXX_EXECUTABLE_LINKER__testbackend_Debug CMakeFiles/testbackend.dir/pistache/examples/http_server.cc.o | /opt/homebrew/lib/libpistache.dylib
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk
-  LINK_LIBRARIES = /opt/homebrew/lib/libpistache.dylib  -levent
-  LINK_PATH = -L/opt/homebrew/lib
+  LINK_LIBRARIES = -Wl,-rpath,/opt/homebrew/Cellar/libpqxx/7.9.1/lib -Wl,-rpath,/opt/homebrew/Cellar/libevent/2.1.12_1/lib  /opt/homebrew/lib/libpistache.dylib  -levent
+  LINK_PATH = -L/opt/homebrew/Cellar/libpqxx/7.9.1/lib   -L/opt/homebrew/Cellar/libevent/2.1.12_1/lib
   OBJECT_DIR = CMakeFiles/testbackend.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -140,11 +147,6 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # Folder: /Users/sawyer/banksimulation/backendapi/cmake-build-debug
 
 build all: phony backendapi testbackend
-
-# =============================================================================
-# Unknown Build Time Dependencies.
-# Tell Ninja that they may appear as side effects of build rules
-# otherwise ordered by order-only dependencies.
 
 # =============================================================================
 # Built-in targets

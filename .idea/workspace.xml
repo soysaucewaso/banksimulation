@@ -18,21 +18,28 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df6d8293-ecb8-4cd5-b685-a7e23e674b0b" name="Changes" comment="finally figured out threading on pistache would work if a thread waited for some time after sending a response">
-      <change afterPath="$PROJECT_DIR$/backendapi/bankrequests.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backendapi/bankrequests.h" afterDir="false" />
+    <list default="true" id="df6d8293-ecb8-4cd5-b685-a7e23e674b0b" name="Changes" comment="switched from a handler to a custom endpoint class, still setting up the api">
+      <change afterPath="$PROJECT_DIR$/.idea/banksimulation.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backendapi/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backendapi/bankapiserver.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/bankapiserver.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backendapi/bankrequests.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/bankrequests.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backendapi/bankrequests.h" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/bankrequests.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backendapi/cmake-build-debug/.cmake/api/v1/reply/cache-v2-e4fff98983b476f0a084.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backendapi/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-5b042582eeee7f280d86.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backendapi/cmake-build-debug/.cmake/api/v1/reply/index-2024-07-01T03-07-27-0114.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backendapi/cmake-build-debug/.cmake/api/v1/reply/target-backendapi-Debug-8428f9583493d5e1239f.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backendapi/cmake-build-debug/.cmake/api/v1/reply/target-testbackend-Debug-dbd22c2aa459fe41f46f.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backendapi/cmake-build-debug/.cmake/api/v1/reply/toolchains-v1-61ee67a1e55da4b96828.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/backendapi/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/cmake-build-debug/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backendapi/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/cmake-build-debug/.ninja_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backendapi/cmake-build-debug/CMakeFiles/backendapi.dir/playing.o" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/cmake-build-debug/CMakeFiles/backendapi.dir/playing.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backendapi/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backendapi/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backendapi/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backendapi/cmake-build-debug/backendapi" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/cmake-build-debug/backendapi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backendapi/main.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backendapi/main.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backendapi/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/cmake-build-debug/build.ninja" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backendapi/pistache/examples/http_server.cc" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/pistache/examples/http_server.cc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backendapi/pistache/examples/rest_server.cc" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/pistache/examples/rest_server.cc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backendapi/playing.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/bankapiserver.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +58,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/backendapi/pistache" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -68,27 +75,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;cf.advertisement.text.has.clang-format&quot;: &quot;true&quot;,
-    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "cf.advertisement.text.has.clang-format": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "nodejs_package_manager_path": "npm"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/backendapi" />
     </key>
   </component>
   <component name="RunManager" selected="CMake Application.backendapi">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <configuration name="backendapi" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="backendapi" TARGET_NAME="backendapi" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="backendapi" RUN_TARGET_NAME="backendapi">
@@ -128,6 +136,7 @@
       <updated>1719702807976</updated>
       <workItem from="1719702809224" duration="30000" />
       <workItem from="1719702972343" duration="13488000" />
+      <workItem from="1719897819252" duration="9345000" />
     </task>
     <task id="LOCAL-00001" summary="added folder for backend">
       <created>1719703034323</created>
@@ -157,7 +166,14 @@
       <option name="project" value="LOCAL" />
       <updated>1719876115874</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="switched from a handler to a custom endpoint class, still setting up the api">
+      <created>1719886295401</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1719886295401</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -180,6 +196,18 @@
     <MESSAGE value="tried using pistache, discovered its multithreading doesn't work, either because of an issue with mac or with pistache will test" />
     <MESSAGE value="tested threading, didnt work so reverting to see why" />
     <MESSAGE value="finally figured out threading on pistache would work if a thread waited for some time after sending a response" />
-    <option name="LAST_COMMIT_MESSAGE" value="finally figured out threading on pistache would work if a thread waited for some time after sending a response" />
+    <MESSAGE value="switched from a handler to a custom endpoint class, still setting up the api" />
+    <option name="LAST_COMMIT_MESSAGE" value="switched from a handler to a custom endpoint class, still setting up the api" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/backendapi/bankapiserver.cpp</url>
+          <line>35</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

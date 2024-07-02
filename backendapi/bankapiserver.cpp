@@ -3,7 +3,7 @@
 //
 #include <iostream>
 #include <pistache/endpoint.h>
-#include <pistache/http.h>
+
 #include <pistache/router.h>
 
 #include <thread>
@@ -18,7 +18,7 @@ public:
         server->init(opts);
         
         initRoutes();
-        server->setHandler(router.handler());
+        server->setHandler(router->handler());
         server->serveThreaded();
     }
     // default destructor works
@@ -27,14 +27,36 @@ public:
 private:
     void initRoutes(){
         using namespace Rest;
-        Routes::Get(router, "/balance/:username", Routes::bind(&BankEndpoint::getBalance,this));
+        router = new Router();
+        Routes::Get(*router, "/balance/:username", Routes::bind(&BankEndpoint::getBalance,this));
+        Routes::Post(*router, "/deposit/:username/:amt", Routes::bind(&BankEndpoint::deposit,this));
+        Routes::Post(*router, "/withdraw/:username/:amt", Routes::bind(&BankEndpoint::withdraw, this));
     }
     void getBalance(const Rest::Request& req, Http::ResponseWriter resp){
         auto uname = req.param(":username").as<std::string>();
+        auto balance = requestHandler->getBalance(uname);
+        cout << balance;
+        resp.send(Http::Code::Ok, to_string(balance));
+    }
+    void deposit(const Rest::Request& req, Http::ResponseWriter resp){
+        auto uname = req.param(":username").as<std::string>();
+        double amt;
+        try {
+           amt = req.param(":amt").as<double>();
+        }catch(exception &e){ 
+            cout << e.what();
+            
+            return;}
+        string reqResp;
+        Http::Code code = requestHandler->deposit(uname,amt, reqResp);
+        resp.send(code,reqResp);
+    }
+    void withdraw(const Rest::Request& req, Http::ResponseWriter resp){
         
     }
     Http::Endpoint* server;
-    Rest::Router router;
+    Rest::Router* router;
+    BankRequests* requestHandler;
 };
 class HelloHandler : public Http::Handler {
 public:
@@ -63,23 +85,16 @@ int main(){
     // server
     Address addr(Ipv4::any(), Port(9080));
     auto opts = Http::Endpoint::options().threads(5);
-    Http::Endpoint server(addr);
-    server.init(opts);
-    server.setHandler(Http::make_handler<HelloHandler>());
+    std::cout << std::this_thread::get_id()<<std::endl;
+    BankEndpoint server(addr, opts);
     
     // tls
     //server.useSSL();
     //server.useSSLAuth();
     
-    std::cout << std::this_thread::get_id()<<std::endl;
-    server.serveThreaded();
-    /*std::thread serverThread([server](){
-        std::cout << std::this_thread::get_id()<<std::endl;
-        server->serve();
-    });*/
+    
     std::this_thread::sleep_for(std::chrono::seconds(50));
     
-    server.shutdown();
     return 0;
 }
 

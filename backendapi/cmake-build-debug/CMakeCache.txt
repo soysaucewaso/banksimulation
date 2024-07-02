@@ -220,11 +220,32 @@ PKG_CONFIG_ARGN:STRING=
 //pkg-config executable
 PKG_CONFIG_EXECUTABLE:FILEPATH=/opt/homebrew/bin/pkg-config
 
+//The directory containing a CMake configuration file for PQXX.
+PQXX_DIR:PATH=PQXX_DIR-NOTFOUND
+
 //The directory containing a CMake configuration file for Pistache.
 Pistache_DIR:PATH=Pistache_DIR-NOTFOUND
 
 //Path to a library.
 Pistache_LIBRARY:FILEPATH=/opt/homebrew/lib/libpistache.dylib
+
+//The Set the PostgreSQL_INCLUDE_DIR cmake cache entry to the top-level
+// directory containing the PostgreSQL include directories. E.g
+// /usr/local/include/PostgreSQL/8.4 or C:/Program Files/PostgreSQL/8.4/include
+PostgreSQL_INCLUDE_DIR:PATH=PostgreSQL_INCLUDE_DIR-NOTFOUND
+
+//The Set the PostgreSQL_LIBRARY_DIR cmake cache entry to the top-level
+// directory containing the PostgreSQL libraries.
+PostgreSQL_LIBRARY_DEBUG:FILEPATH=PostgreSQL_LIBRARY_DEBUG-NOTFOUND
+
+//The Set the PostgreSQL_LIBRARY_DIR cmake cache entry to the top-level
+// directory containing the PostgreSQL libraries.
+PostgreSQL_LIBRARY_RELEASE:FILEPATH=PostgreSQL_LIBRARY_RELEASE-NOTFOUND
+
+//The Set the PostgreSQL_INCLUDE_DIR cmake cache entry to the top-level
+// directory containing the PostgreSQL include directories. E.g
+// /usr/local/include/PostgreSQL/8.4 or C:/Program Files/PostgreSQL/8.4/include
+PostgreSQL_TYPE_INCLUDE_DIR:PATH=PostgreSQL_TYPE_INCLUDE_DIR-NOTFOUND
 
 //Value Computed by CMake
 Project_BINARY_DIR:STATIC=/Users/sawyer/banksimulation/backendapi/cmake-build-debug
@@ -244,8 +265,14 @@ backendapi_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 backendapi_SOURCE_DIR:STATIC=/Users/sawyer/banksimulation/backendapi
 
+//The directory containing a CMake configuration file for libpqxx.
+libpqxx_DIR:PATH=/usr/local/lib/libpqxx/cmake
+
 //Path to a library.
 pkgcfg_lib_LIBEVENT_event:FILEPATH=/opt/homebrew/Cellar/libevent/2.1.12_1/lib/libevent.dylib
+
+//Path to a library.
+pkgcfg_lib_PQXX_pqxx:FILEPATH=/opt/homebrew/Cellar/libpqxx/7.9.1/lib/libpqxx.dylib
 
 
 ########################
@@ -385,6 +412,8 @@ CMAKE_UNAME:INTERNAL=/usr/bin/uname
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
 //Details about finding PkgConfig
 FIND_PACKAGE_MESSAGE_DETAILS_PkgConfig:INTERNAL=[/opt/homebrew/bin/pkg-config][v0.29.2()]
+//Details about finding PostgreSQL
+FIND_PACKAGE_MESSAGE_DETAILS_PostgreSQL:INTERNAL=[/opt/homebrew/lib][/opt/homebrew/include][c ][v()]
 LIBEVENT_CFLAGS:INTERNAL=-I/opt/homebrew/Cellar/libevent/2.1.12_1/include
 LIBEVENT_CFLAGS_I:INTERNAL=
 LIBEVENT_CFLAGS_OTHER:INTERNAL=
@@ -424,9 +453,56 @@ LIBEVENT_libevent_VERSION:INTERNAL=
 PKG_CONFIG_ARGN-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: PKG_CONFIG_EXECUTABLE
 PKG_CONFIG_EXECUTABLE-ADVANCED:INTERNAL=1
+PQXX_CFLAGS:INTERNAL=-I/opt/homebrew/Cellar/libpqxx/7.9.1/include
+PQXX_CFLAGS_I:INTERNAL=
+PQXX_CFLAGS_OTHER:INTERNAL=
+PQXX_FOUND:INTERNAL=1
+PQXX_INCLUDEDIR:INTERNAL=/opt/homebrew/Cellar/libpqxx/7.9.1/include
+PQXX_INCLUDE_DIRS:INTERNAL=/opt/homebrew/Cellar/libpqxx/7.9.1/include
+PQXX_LDFLAGS:INTERNAL=-L/opt/homebrew/Cellar/libpqxx/7.9.1/lib;-lpqxx
+PQXX_LDFLAGS_OTHER:INTERNAL=
+PQXX_LIBDIR:INTERNAL=/opt/homebrew/Cellar/libpqxx/7.9.1/lib
+PQXX_LIBRARIES:INTERNAL=pqxx
+PQXX_LIBRARY_DIRS:INTERNAL=/opt/homebrew/Cellar/libpqxx/7.9.1/lib
+PQXX_LIBS:INTERNAL=
+PQXX_LIBS_L:INTERNAL=
+PQXX_LIBS_OTHER:INTERNAL=
+PQXX_LIBS_PATHS:INTERNAL=
+PQXX_MODULE_NAME:INTERNAL=libpqxx
+PQXX_PREFIX:INTERNAL=/opt/homebrew/Cellar/libpqxx/7.9.1
+PQXX_STATIC_CFLAGS:INTERNAL=-I/opt/homebrew/Cellar/libpqxx/7.9.1/include
+PQXX_STATIC_CFLAGS_I:INTERNAL=
+PQXX_STATIC_CFLAGS_OTHER:INTERNAL=
+PQXX_STATIC_INCLUDE_DIRS:INTERNAL=/opt/homebrew/Cellar/libpqxx/7.9.1/include
+PQXX_STATIC_LDFLAGS:INTERNAL=-L/opt/homebrew/Cellar/libpqxx/7.9.1/lib;-lpqxx
+PQXX_STATIC_LDFLAGS_OTHER:INTERNAL=
+PQXX_STATIC_LIBDIR:INTERNAL=
+PQXX_STATIC_LIBRARIES:INTERNAL=pqxx
+PQXX_STATIC_LIBRARY_DIRS:INTERNAL=/opt/homebrew/Cellar/libpqxx/7.9.1/lib
+PQXX_STATIC_LIBS:INTERNAL=
+PQXX_STATIC_LIBS_L:INTERNAL=
+PQXX_STATIC_LIBS_OTHER:INTERNAL=
+PQXX_STATIC_LIBS_PATHS:INTERNAL=
+PQXX_VERSION:INTERNAL=7.9.1
+PQXX_libpqxx_INCLUDEDIR:INTERNAL=
+PQXX_libpqxx_LIBDIR:INTERNAL=
+PQXX_libpqxx_PREFIX:INTERNAL=
+PQXX_libpqxx_VERSION:INTERNAL=
+//ADVANCED property for variable: PostgreSQL_INCLUDE_DIR
+PostgreSQL_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PostgreSQL_LIBRARY_DEBUG
+PostgreSQL_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PostgreSQL_LIBRARY_RELEASE
+PostgreSQL_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PostgreSQL_TYPE_INCLUDE_DIR
+PostgreSQL_TYPE_INCLUDE_DIR-ADVANCED:INTERNAL=1
 __pkg_config_arguments_LIBEVENT:INTERNAL=REQUIRED;libevent
+__pkg_config_arguments_PQXX:INTERNAL=REQUIRED;libpqxx
 __pkg_config_checked_LIBEVENT:INTERNAL=1
+__pkg_config_checked_PQXX:INTERNAL=1
 //ADVANCED property for variable: pkgcfg_lib_LIBEVENT_event
 pkgcfg_lib_LIBEVENT_event-ADVANCED:INTERNAL=1
-prefix_result:INTERNAL=/opt/homebrew/Cellar/libevent/2.1.12_1/lib
+//ADVANCED property for variable: pkgcfg_lib_PQXX_pqxx
+pkgcfg_lib_PQXX_pqxx-ADVANCED:INTERNAL=1
+prefix_result:INTERNAL=/opt/homebrew/Cellar/libpqxx/7.9.1/lib
 

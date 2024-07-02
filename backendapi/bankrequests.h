@@ -2,20 +2,23 @@
 // Created by Sawyer Blankenship on 7/1/24.
 //
 #include <string>
+#include <pistache/http.h>
+
+#include <pqxx/pqxx>
+
 #ifndef BACKENDAPI_BANKREQUESTS_H
 #define BACKENDAPI_BANKREQUESTS_H
 
-namespace std {
+using namespace std;
 
-    class bankrequests {
-    public:
-        double getBalance(string& username);
-        
-        bool withdraw(string& username, int amt);
-        
-        bool deposit(string& username, int amt);
-    };
+class BankRequests {
+public:
+    double getBalance(string &username);
 
-} // std
+    bool withdraw(string &username, int amt, string& resp);
+
+    Pistache::Http::Code deposit(string &username, int amt, string& resp);
+};
+    
 
 #endif //BACKENDAPI_BANKREQUESTS_H
