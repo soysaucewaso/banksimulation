@@ -71,28 +71,6 @@ private:
     Rest::Router* router;
     BankRequests* requestHandler;
 };
-class HelloHandler : public Http::Handler {
-public:
-    HTTP_PROTOTYPE(HelloHandler)
-
-    void onRequest(const Http::Request& req, Http::ResponseWriter resp) override{
-        std::cout << std::this_thread::get_id()<<std::endl;
-        if (req.resource() == "/ping"){
-            resp.send(Http::Code::Ok, "PONG");
-        }
-        else if (req.resource().substr(0,12) == "/getbalance/" && req.method() == Http::Method::Get){
-            std::cout << req.resource();
-            
-            resp.send(Http::Code::Accepted);
-        }else{
-            resp.send(Http::Code::Not_Found);
-        }
-        
-        std::this_thread::sleep_for(std::chrono::seconds(1));
-    }
-    
-};
-
 
 int main(){
     // server
