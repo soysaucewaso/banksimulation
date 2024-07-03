@@ -18,6 +18,8 @@ public:
         server->init(opts);
         
         initRoutes();
+        
+        requestHandler = new BankRequests();
         server->setHandler(router->handler());
         server->serveThreaded();
     }
@@ -35,8 +37,10 @@ private:
     void getBalance(const Rest::Request& req, Http::ResponseWriter resp){
         auto uname = req.param(":username").as<std::string>();
         auto balance = requestHandler->getBalance(uname);
-        cout << balance;
-        resp.send(Http::Code::Ok, to_string(balance));
+        if (balance == -1){
+            resp.send(Http::Code::Not_Found);
+        }
+        else{resp.send(Http::Code::Ok, to_string(balance));}
     }
     void deposit(const Rest::Request& req, Http::ResponseWriter resp){
         auto uname = req.param(":username").as<std::string>();
@@ -52,7 +56,16 @@ private:
         resp.send(code,reqResp);
     }
     void withdraw(const Rest::Request& req, Http::ResponseWriter resp){
-        
+        auto uname = req.param(":username").as<std::string>();
+        double amt;
+        try {
+            amt = req.param(":amt").as<double>();
+        }catch(exception &e){
+            cout << e.what();
+            return;}
+        string reqResp;
+        Http::Code code = requestHandler->withdraw(uname,amt, reqResp);
+        resp.send(code,reqResp);
     }
     Http::Endpoint* server;
     Rest::Router* router;

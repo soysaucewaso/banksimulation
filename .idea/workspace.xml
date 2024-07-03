@@ -18,26 +18,15 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df6d8293-ecb8-4cd5-b685-a7e23e674b0b" name="Changes" comment="switched from a handler to a custom endpoint class, still setting up the api">
-      <change afterPath="$PROJECT_DIR$/.idea/banksimulation.iml" afterDir="false" />
+    <list default="true" id="df6d8293-ecb8-4cd5-b685-a7e23e674b0b" name="Changes" comment="added pqxx library allowing postgresql connectiongs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backendapi/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backendapi/bankapiserver.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/bankapiserver.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backendapi/bankrequests.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/bankrequests.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backendapi/bankrequests.h" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/bankrequests.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backendapi/cmake-build-debug/.cmake/api/v1/reply/cache-v2-e4fff98983b476f0a084.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backendapi/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-5b042582eeee7f280d86.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backendapi/cmake-build-debug/.cmake/api/v1/reply/index-2024-07-01T03-07-27-0114.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backendapi/cmake-build-debug/.cmake/api/v1/reply/target-backendapi-Debug-8428f9583493d5e1239f.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backendapi/cmake-build-debug/.cmake/api/v1/reply/target-testbackend-Debug-dbd22c2aa459fe41f46f.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backendapi/cmake-build-debug/.cmake/api/v1/reply/toolchains-v1-61ee67a1e55da4b96828.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/backendapi/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/cmake-build-debug/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backendapi/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/cmake-build-debug/.ninja_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backendapi/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/cmake-build-debug/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backendapi/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backendapi/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backendapi/cmake-build-debug/backendapi" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/cmake-build-debug/backendapi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backendapi/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/cmake-build-debug/build.ninja" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backendapi/pistache/examples/http_server.cc" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/pistache/examples/http_server.cc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backendapi/pistache/examples/rest_server.cc" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/pistache/examples/rest_server.cc" afterDir="false" />
     </list>
@@ -136,7 +125,7 @@
       <updated>1719702807976</updated>
       <workItem from="1719702809224" duration="30000" />
       <workItem from="1719702972343" duration="13488000" />
-      <workItem from="1719897819252" duration="9345000" />
+      <workItem from="1719897819252" duration="18152000" />
     </task>
     <task id="LOCAL-00001" summary="added folder for backend">
       <created>1719703034323</created>
@@ -197,15 +186,16 @@
     <MESSAGE value="tested threading, didnt work so reverting to see why" />
     <MESSAGE value="finally figured out threading on pistache would work if a thread waited for some time after sending a response" />
     <MESSAGE value="switched from a handler to a custom endpoint class, still setting up the api" />
-    <option name="LAST_COMMIT_MESSAGE" value="switched from a handler to a custom endpoint class, still setting up the api" />
+    <MESSAGE value="added pqxx library allowing postgresql connectiongs" />
+    <option name="LAST_COMMIT_MESSAGE" value="added pqxx library allowing postgresql connectiongs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/backendapi/bankapiserver.cpp</url>
-          <line>35</line>
-          <option name="timeStamp" value="14" />
+          <line>53</line>
+          <option name="timeStamp" value="17" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
