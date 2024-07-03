@@ -18,11 +18,11 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df6d8293-ecb8-4cd5-b685-a7e23e674b0b" name="Changes" comment="added pqxx library allowing postgresql connectiongs">
+    <list default="true" id="df6d8293-ecb8-4cd5-b685-a7e23e674b0b" name="Changes" comment="deleted reduntant hellohandler">
+      <change afterPath="$PROJECT_DIR$/backendapi/SystemTest.http" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backendapi/http-client.env.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backendapi/bankapiserver.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/bankapiserver.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backendapi/bankrequests.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/bankrequests.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backendapi/bankrequests.h" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/bankrequests.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backendapi/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/cmake-build-debug/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backendapi/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/cmake-build-debug/.ninja_log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backendapi/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
@@ -43,12 +43,22 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CMakeLists.txt" />
+        <option value="HTTP Request" />
+        <option value="HTTP Public Environment File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="HttpClientSelectedEnvironments">
+    <file url="jar://$APPLICATION_HOME_DIR$/plugins/restClient/lib/restClient.jar!/com/intellij/ws/rest/client/requests/collection/get-requests.http" environment="test" />
+    <file url="jar://$APPLICATION_HOME_DIR$/plugins/restClient/lib/restClient.jar!/com/intellij/ws/rest/client/requests/collection/post-requests.http" environment="test" />
+    <file url="file:///private/var/folders/s9/vw4tlvjx2394n_jhx_3n114h0000gp/T/whats-new.http.http" environment="test" />
+    <file url="jar://$APPLICATION_HOME_DIR$/plugins/restClient/lib/restClient.jar!/com/intellij/ws/rest/client/requests/collection/requests-with-authorization.http" environment="test" />
+    <file url="jar://$APPLICATION_HOME_DIR$/plugins/restClient/lib/restClient.jar!/com/intellij/ws/rest/client/requests/collection/requests-with-tests.http" environment="test" />
+    <file url="file://$PROJECT_DIR$/backendapi/SystemTest.http" environment="dev" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -74,7 +84,8 @@
     "cf.advertisement.text.has.clang-format": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
-    "nodejs_package_manager_path": "npm"
+    "nodejs_package_manager_path": "npm",
+    "rest.client.default.execution.environment": "dev"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -98,20 +109,37 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="testtarget" type="MAKEFILE_TARGET_RUN_CONFIGURATION" factoryName="Makefile" temporary="true">
-      <makefile filename="$PROJECT_DIR$/backendapi/Makefile" target="testtarget" workingDirectory="" arguments="">
-        <envs />
-      </makefile>
+    <configuration name="All in SystemTest" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/backendapi/SystemTest.http">
+      <method v="2" />
+    </configuration>
+    <configuration name="SystemTest | For these tests use a new name each test(or reset db)" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/backendapi/SystemTest.http" index="2" requestIdentifier="For these tests use a new name each test(or reset db)" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="SystemTest | #2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/backendapi/SystemTest.http" index="2" requestIdentifier="#2" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="SystemTest | #3" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/backendapi/SystemTest.http" index="3" requestIdentifier="#3" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="SystemTest | #4" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/backendapi/SystemTest.http" index="4" requestIdentifier="#4" runType="Run single request">
       <method v="2" />
     </configuration>
     <list>
       <item itemvalue="CMake Application.backendapi" />
       <item itemvalue="CMake Application.testbackend" />
-      <item itemvalue="Makefile Target.testtarget" />
+      <item itemvalue="HTTP Request.All in SystemTest" />
+      <item itemvalue="HTTP Request.SystemTest | #2" />
+      <item itemvalue="HTTP Request.SystemTest | #3" />
+      <item itemvalue="HTTP Request.SystemTest | #4" />
+      <item itemvalue="HTTP Request.SystemTest | For these tests use a new name each test(or reset db)" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Makefile Target.testtarget" />
+        <item itemvalue="HTTP Request.All in SystemTest" />
+        <item itemvalue="HTTP Request.SystemTest | #2" />
+        <item itemvalue="HTTP Request.SystemTest | For these tests use a new name each test(or reset db)" />
+        <item itemvalue="HTTP Request.SystemTest | #4" />
+        <item itemvalue="HTTP Request.SystemTest | #3" />
       </list>
     </recent_temporary>
   </component>
@@ -125,7 +153,7 @@
       <updated>1719702807976</updated>
       <workItem from="1719702809224" duration="30000" />
       <workItem from="1719702972343" duration="13488000" />
-      <workItem from="1719897819252" duration="18152000" />
+      <workItem from="1719897819252" duration="22570000" />
     </task>
     <task id="LOCAL-00001" summary="added folder for backend">
       <created>1719703034323</created>
@@ -162,7 +190,21 @@
       <option name="project" value="LOCAL" />
       <updated>1719886295401</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="finished api and handler did some basic testing">
+      <created>1720045045137</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1720045045137</updated>
+    </task>
+    <task id="LOCAL-00007" summary="deleted reduntant hellohandler">
+      <created>1720045191672</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1720045191672</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -187,17 +229,8 @@
     <MESSAGE value="finally figured out threading on pistache would work if a thread waited for some time after sending a response" />
     <MESSAGE value="switched from a handler to a custom endpoint class, still setting up the api" />
     <MESSAGE value="added pqxx library allowing postgresql connectiongs" />
-    <option name="LAST_COMMIT_MESSAGE" value="added pqxx library allowing postgresql connectiongs" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/backendapi/bankapiserver.cpp</url>
-          <line>53</line>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="finished api and handler did some basic testing" />
+    <MESSAGE value="deleted reduntant hellohandler" />
+    <option name="LAST_COMMIT_MESSAGE" value="deleted reduntant hellohandler" />
   </component>
 </project>

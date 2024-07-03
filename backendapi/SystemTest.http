@@ -1,0 +1,56 @@
+@environment=dev
+
+###
+GET {{url}}/balance/{{name1}}
+
+> {%
+client.test("Entry doesn't exist", function() {
+  client.assert(response.status === 404, "Response status is not 404");
+});
+%}
+### For these tests use a new name each test(or reset db)
+POST http://localhost:9080/deposit/thack/20
+
+> {%
+client.test("Deposit to a existing username", function() {
+  client.assert(response.status === 202, "Response status is not 200");
+  client.assert(parseFloat(response.body) === 20, "jack has " + response.body + " not 20");
+});
+%}
+###
+
+###
+POST http://localhost:9080/deposit/thack/12000
+
+> {%
+client.test("Deposit to a existing username", function() {
+  client.assert(response.status === 202, "Response status is not 200");
+  client.assert(parseFloat(response.body) === 12020, "jack has " + response.body + " not 12020");
+});
+%}
+
+###
+POST http://localhost:9080/withdraw/ben/1
+
+> {% 
+ client.test("Withdraw from a nonexistant bank", function (){
+     client.assert(response.status === 400, "Response status is not 400");
+ })%}
+
+###
+POST http://localhost:9080/withdraw/thack/12019
+
+> {% 
+ client.test("Withdraw from an existing bank", function (){
+     client.assert(response.status === 202, "Response status is not 202");
+     client.assert(parseFloat(response.body)  === 1, "Bob has " + response.body+" not 1");
+ })%}
+
+###
+POST {{url}}/withdraw/thack/200
+
+> {% 
+ client.test("Withdraw from an existing bank", function (){
+     client.assert(response.status === 400, "Response status is not 403");
+     client.assert(parseFloat(response.body)  === 1, "Bob has " + response.body+" not 1");
+ })%}

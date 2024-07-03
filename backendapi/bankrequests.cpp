@@ -26,7 +26,7 @@ Pistache::Http::Code BankRequests::withdraw(std::string &username, int amt, std:
         if (bal == -1){
             resp = "Username not Found\n";
         }else if(newBal < 0){
-            resp = "Balance too low\n";
+            resp = to_string(bal);
         }else{
             txn.exec_params(UPDATEQUERY,username,newBal);
             resp = to_string(newBal);
