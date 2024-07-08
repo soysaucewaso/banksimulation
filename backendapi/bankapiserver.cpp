@@ -1,33 +1,22 @@
 //
 // Created by Sawyer Blankenship on 6/30/24.
 //
+#include "../sharedabstractclasses/EndpointTemplate.h"
+
 #include <iostream>
-#include <pistache/endpoint.h>
-
-#include <pistache/router.h>
-
-#include <thread>
 #include "bankrequests.h"
 using namespace Pistache;
-
-class BankEndpoint
+class BankEndpoint : public EndpointTemplate
 {
 public:
-    explicit BankEndpoint(Address addr, Http::Endpoint::Options opts) {
-        server = new Http::Endpoint(addr);
-        server->init(opts);
-        
-        initRoutes();
-        
+    explicit BankEndpoint() {
         requestHandler = new BankRequests();
-        server->setHandler(router->handler());
-        server->serveThreaded();
     }
     // default destructor works
     
     
 private:
-    void initRoutes(){
+    void initRoutes() override{
         using namespace Rest;
         router = new Router();
         Routes::Get(*router, "/balance/:username", Routes::bind(&BankEndpoint::getBalance,this));
@@ -67,8 +56,6 @@ private:
         Http::Code code = requestHandler->withdraw(uname,amt, reqResp);
         resp.send(code,reqResp);
     }
-    Http::Endpoint* server;
-    Rest::Router* router;
     BankRequests* requestHandler;
 };
 
@@ -77,7 +64,8 @@ int main(){
     Address addr(Ipv4::any(), Port(9080));
     auto opts = Http::Endpoint::options().threads(5);
     std::cout << std::this_thread::get_id()<<std::endl;
-    BankEndpoint server(addr, opts);
+    EndpointTemplate* server = new BankEndpoint();
+    server->init(addr,opts);
     
     // tls
     //server.useSSL();

@@ -1,15 +1,13 @@
 # ninja log v5
-6	1018	1719960922343007908	CMakeFiles/backendapi.dir/bankrequests.o	d26d4f90b613ca43
-8	5478	1719883819211683987	CMakeFiles/backendapi.dir/playing.o	61e3f393274d71ba
-6	1190	1720044996273080812	CMakeFiles/backendapi.dir/bankrequests.cpp.o	2f00aa206d31077e
-4	1006	1719800458190334089	CMakeFiles/testbackend.dir/pistache/examples/http_server.o	440165307dc8387b
-0	1189	1719799663232346550	CMakeFiles/testbackend.dir/pistache/examples/rest_server.o	5c68fa92e6d9e5df
-1328	1385	1720045616633193121	backendapi	b29f64f4bd84b042
-6	1328	1720045616572146402	CMakeFiles/backendapi.dir/bankapiserver.cpp.o	4eb7e8c7df0ae70c
-1006	1157	1719800458342662783	testbackend	2e17e9ec3dcc9b29
-0	64	1720474379204292533	build.ninja	79c80fd2687045c2
 6	1240	1719960922566154011	CMakeFiles/backendapi.dir/bankapiserver.o	49e6a56caa128134
-1	64	1720474379204292533	build.ninja	79c80fd2687045c2
-6	1170	1720474380379786383	CMakeFiles/backendapi.dir/bankrequests.cpp.o	d6609803b73f89bf
+0	69	1720474700269685732	build.ninja	79c80fd2687045c2
+1006	1157	1719800458342662783	testbackend	2e17e9ec3dcc9b29
 6	1251	1720474380461210125	CMakeFiles/backendapi.dir/bankapiserver.cpp.o	c5e48bb63a9beb86
 1252	3663	1720474382875720411	backendapi	b29f64f4bd84b042
+0	1189	1719799663232346550	CMakeFiles/testbackend.dir/pistache/examples/rest_server.o	5c68fa92e6d9e5df
+4	1006	1719800458190334089	CMakeFiles/testbackend.dir/pistache/examples/http_server.o	440165307dc8387b
+6	1170	1720474380379786383	CMakeFiles/backendapi.dir/bankrequests.cpp.o	d6609803b73f89bf
+8	5478	1719883819211683987	CMakeFiles/backendapi.dir/playing.o	61e3f393274d71ba
+6	1018	1719960922343007908	CMakeFiles/backendapi.dir/bankrequests.o	d26d4f90b613ca43
+6	1294	1720475904259811475	CMakeFiles/backendapi.dir/bankapiserver.cpp.o	c5e48bb63a9beb86
+6	1381	1720476349339405435	CMakeFiles/backendapi.dir/bankapiserver.cpp.o	c5e48bb63a9beb86

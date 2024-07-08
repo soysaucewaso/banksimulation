@@ -8,7 +8,6 @@
   </component>
   <component name="CMakeRunConfigurationManager">
     <generated>
-      <config projectName="backendapi" targetName="testbackend" />
       <config projectName="backendapi" targetName="backendapi" />
     </generated>
   </component>
@@ -18,17 +17,16 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df6d8293-ecb8-4cd5-b685-a7e23e674b0b" name="Changes" comment="added http test case">
-      <change afterPath="$PROJECT_DIR$/vendorapi/vendorapiserver.cpp" afterDir="false" />
+    <list default="true" id="df6d8293-ecb8-4cd5-b685-a7e23e674b0b" name="Changes" comment="relocated pistache to library area, updated cmake started vendorapiserver">
+      <change afterPath="$PROJECT_DIR$/sharedabstractclasses/EndpointTemplate.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sharedabstractclasses/EndpointTemplate.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backendapi/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backendapi/bankapiserver.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/bankapiserver.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backendapi/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/cmake-build-debug/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backendapi/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/cmake-build-debug/.ninja_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backendapi/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/cmake-build-debug/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backendapi/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backendapi/cmake-build-debug/CMakeFiles/rules.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/cmake-build-debug/CMakeFiles/rules.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backendapi/cmake-build-debug/backendapi" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/cmake-build-debug/backendapi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backendapi/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/cmake-build-debug/build.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backendapi/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backendapi/cmake-build-debug/backendapi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendorapi/vendorapiserver.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/vendorapi/vendorapiserver.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,11 +102,6 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="testbackend" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="backendapi" TARGET_NAME="testbackend" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="backendapi" RUN_TARGET_NAME="testbackend">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="All in SystemTest" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/backendapi/SystemTest.http">
       <method v="2" />
     </configuration>
@@ -126,7 +119,6 @@
     </configuration>
     <list>
       <item itemvalue="CMake Application.backendapi" />
-      <item itemvalue="CMake Application.testbackend" />
       <item itemvalue="HTTP Request.All in SystemTest" />
       <item itemvalue="HTTP Request.SystemTest | #2" />
       <item itemvalue="HTTP Request.SystemTest | #3" />
@@ -153,7 +145,7 @@
       <updated>1719702807976</updated>
       <workItem from="1719702809224" duration="30000" />
       <workItem from="1719702972343" duration="13488000" />
-      <workItem from="1719897819252" duration="24671000" />
+      <workItem from="1719897819252" duration="26588000" />
     </task>
     <task id="LOCAL-00001" summary="added folder for backend">
       <created>1719703034323</created>
@@ -211,7 +203,14 @@
       <option name="project" value="LOCAL" />
       <updated>1720049338634</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="relocated pistache to library area, updated cmake started vendorapiserver">
+      <created>1720474481411</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1720474481411</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -239,6 +238,7 @@
     <MESSAGE value="finished api and handler did some basic testing" />
     <MESSAGE value="deleted reduntant hellohandler" />
     <MESSAGE value="added http test case" />
-    <option name="LAST_COMMIT_MESSAGE" value="added http test case" />
+    <MESSAGE value="relocated pistache to library area, updated cmake started vendorapiserver" />
+    <option name="LAST_COMMIT_MESSAGE" value="relocated pistache to library area, updated cmake started vendorapiserver" />
   </component>
 </project>
