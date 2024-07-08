@@ -18,17 +18,17 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df6d8293-ecb8-4cd5-b685-a7e23e674b0b" name="Changes" comment="deleted reduntant hellohandler">
-      <change afterPath="$PROJECT_DIR$/backendapi/SystemTest.http" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backendapi/http-client.env.json" afterDir="false" />
+    <list default="true" id="df6d8293-ecb8-4cd5-b685-a7e23e674b0b" name="Changes" comment="added http test case">
+      <change afterPath="$PROJECT_DIR$/vendorapi/vendorapiserver.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backendapi/bankrequests.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/bankrequests.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backendapi/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backendapi/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/cmake-build-debug/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backendapi/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/cmake-build-debug/.ninja_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backendapi/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backendapi/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backendapi/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backendapi/cmake-build-debug/CMakeFiles/rules.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/cmake-build-debug/CMakeFiles/rules.ninja" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backendapi/cmake-build-debug/backendapi" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/cmake-build-debug/backendapi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backendapi/pistache/examples/http_server.cc" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/pistache/examples/http_server.cc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backendapi/pistache/examples/rest_server.cc" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/pistache/examples/rest_server.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backendapi/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/cmake-build-debug/build.ninja" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,7 +153,7 @@
       <updated>1719702807976</updated>
       <workItem from="1719702809224" duration="30000" />
       <workItem from="1719702972343" duration="13488000" />
-      <workItem from="1719897819252" duration="22570000" />
+      <workItem from="1719897819252" duration="24671000" />
     </task>
     <task id="LOCAL-00001" summary="added folder for backend">
       <created>1719703034323</created>
@@ -204,7 +204,14 @@
       <option name="project" value="LOCAL" />
       <updated>1720045191672</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="added http test case">
+      <created>1720049338634</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1720049338634</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -231,6 +238,7 @@
     <MESSAGE value="added pqxx library allowing postgresql connectiongs" />
     <MESSAGE value="finished api and handler did some basic testing" />
     <MESSAGE value="deleted reduntant hellohandler" />
-    <option name="LAST_COMMIT_MESSAGE" value="deleted reduntant hellohandler" />
+    <MESSAGE value="added http test case" />
+    <option name="LAST_COMMIT_MESSAGE" value="added http test case" />
   </component>
 </project>
