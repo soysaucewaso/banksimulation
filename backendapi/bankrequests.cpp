@@ -17,7 +17,7 @@ double BankRequests::getBalance(std::string &username) {
     return bal;
 }
 
-Pistache::Http::Code BankRequests::transact(std::string &srcname, std::string &destname, int amt, std::string &resp) {
+Pistache::Http::Code BankRequests::transact(std::string &srcname, std::string &destname, double amt, std::string &resp) {
     Guard g(lock);
     pqxx::work txn(*conn);
     double srcbal = getBalanceHelper(srcname,txn);
@@ -58,9 +58,21 @@ Pistache::Http::Code BankRequests::transact(std::string &srcname, std::string &d
     }
     
 }
-Pistache::Http::Code BankRequests::getToken(string &srcname, string &destname, int amt, string &token) {
+Pistache::Http::Code BankRequests::getToken(string &srcname, string &destname, double amt, string &token) {
+    Guard g(lock);
+    pqxx::work txn(*conn);
     // its ok to generate a token for a bad transact since it will be rejected
-    
+    sanitizeString(srcname);
+    sanitizeString(destname);
+    const string tokenquery = "INSERT INTO tokens (srcname, destname, amt) VALUES ($1, $2, $3) RETURNING id";
+    try {
+        pqxx::result res = txn.exec_params(tokenquery,srcname,destname,amt);
+        token = res[0][0].as<string>();
+        return Pistache::Http::Code::Accepted;
+    } catch (const exception &e) {
+        cout << "Token Error : " << e.what() << endl;
+        return Pistache::Http::Code::Bad_Request;
+    }
 }
 
 double BankRequests::getBalanceHelper(string &username, pqxx::work& txn) {

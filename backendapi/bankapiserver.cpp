@@ -48,8 +48,8 @@ private:
         resp.send(code,reqResp);
     }
     void getToken(const Rest::Request& req, Http::ResponseWriter resp){
-        auto srcname = req.param("srcname").as<string>();
-        auto destname = req.param("destname").as<string>();
+        auto srcname = req.param(":srcname").as<string>();
+        auto destname = req.param(":destname").as<string>();
         double amt;
         try {
             amt = req.param(":amt").as<double>();
@@ -57,8 +57,9 @@ private:
             cout << e.what();
             return;
         }
-        string token;
-        Http::Code code = requestHandler->
+        string token = "";
+        Http::Code code = requestHandler->getToken(srcname,destname,amt,token);
+        resp.send(code,token);
     }
     BankRequests* requestHandler;
 };

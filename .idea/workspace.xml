@@ -17,17 +17,14 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df6d8293-ecb8-4cd5-b685-a7e23e674b0b" name="Changes" comment="made a template Endpoint semi abstract class, still need to debug">
+    <list default="true" id="df6d8293-ecb8-4cd5-b685-a7e23e674b0b" name="Changes" comment="translate seperate deposit and withdraw routes to a single transact route. Added a getToken method skeleton to bank api">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backendapi/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backendapi/bankapiserver.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/bankapiserver.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backendapi/bankrequests.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/bankrequests.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backendapi/bankrequests.h" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/bankrequests.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backendapi/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/cmake-build-debug/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backendapi/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/cmake-build-debug/.ninja_log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backendapi/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backendapi/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/cmake-build-debug/build.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendorapi/vendorapiserver.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/vendorapi/vendorapiserver.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,7 +143,7 @@
       <updated>1719702807976</updated>
       <workItem from="1719702809224" duration="30000" />
       <workItem from="1719702972343" duration="13488000" />
-      <workItem from="1719897819252" duration="34395000" />
+      <workItem from="1719897819252" duration="36585000" />
     </task>
     <task id="LOCAL-00001" summary="added folder for backend">
       <created>1719703034323</created>
@@ -218,7 +215,14 @@
       <option name="project" value="LOCAL" />
       <updated>1720476428109</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="translate seperate deposit and withdraw routes to a single transact route. Added a getToken method skeleton to bank api">
+      <created>1720602627825</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1720602627825</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -248,6 +252,18 @@
     <MESSAGE value="added http test case" />
     <MESSAGE value="relocated pistache to library area, updated cmake started vendorapiserver" />
     <MESSAGE value="made a template Endpoint semi abstract class, still need to debug" />
-    <option name="LAST_COMMIT_MESSAGE" value="made a template Endpoint semi abstract class, still need to debug" />
+    <MESSAGE value="translate seperate deposit and withdraw routes to a single transact route. Added a getToken method skeleton to bank api" />
+    <option name="LAST_COMMIT_MESSAGE" value="translate seperate deposit and withdraw routes to a single transact route. Added a getToken method skeleton to bank api" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/backendapi/bankapiserver.cpp</url>
+          <line>50</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
