@@ -32,7 +32,7 @@ set(PostgreSQL_INCLUDE_DIR /opt/homebrew/include)
 find_library(Pistache_LIBRARY pistache /opt/homebrew/lib)
 
 # Add executable targets
-add_executable(backendapi bankapiserver.cpp bankrequests.cpp)
+add_executable(backendapi bankapiserver.cpp bankrequests.cpp ../sharedabstractclasses/EndpointTemplate.cpp)
 
 # Link libraries to the executable targets
 target_link_libraries(backendapi ${Pistache_LIBRARY} ${LIBEVENT_LIBRARIES} ${PQXX_LIBRARIES})

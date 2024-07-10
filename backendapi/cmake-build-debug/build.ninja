@@ -60,6 +60,13 @@ build CMakeFiles/backendapi.dir/bankrequests.cpp.o: CXX_COMPILER__backendapi_Deb
   OBJECT_DIR = CMakeFiles/backendapi.dir
   OBJECT_FILE_DIR = CMakeFiles/backendapi.dir
 
+build CMakeFiles/backendapi.dir/Users/sawyer/banksimulation/sharedabstractclasses/EndpointTemplate.cpp.o: CXX_COMPILER__backendapi_Debug /Users/sawyer/banksimulation/sharedabstractclasses/EndpointTemplate.cpp || cmake_object_order_depends_target_backendapi
+  DEP_FILE = CMakeFiles/backendapi.dir/Users/sawyer/banksimulation/sharedabstractclasses/EndpointTemplate.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -std=gnu++17
+  INCLUDES = -I/opt/homebrew/Cellar/libpqxx/7.9.1/include -I/opt/homebrew/Cellar/libevent/2.1.12_1/include -I/opt/homebrew/Cellar/pistache/include
+  OBJECT_DIR = CMakeFiles/backendapi.dir
+  OBJECT_FILE_DIR = CMakeFiles/backendapi.dir/Users/sawyer/banksimulation/sharedabstractclasses
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target backendapi
@@ -68,7 +75,7 @@ build CMakeFiles/backendapi.dir/bankrequests.cpp.o: CXX_COMPILER__backendapi_Deb
 #############################################
 # Link the executable backendapi
 
-build backendapi: CXX_EXECUTABLE_LINKER__backendapi_Debug CMakeFiles/backendapi.dir/bankapiserver.cpp.o CMakeFiles/backendapi.dir/bankrequests.cpp.o | /opt/homebrew/lib/libpistache.dylib
+build backendapi: CXX_EXECUTABLE_LINKER__backendapi_Debug CMakeFiles/backendapi.dir/bankapiserver.cpp.o CMakeFiles/backendapi.dir/bankrequests.cpp.o CMakeFiles/backendapi.dir/Users/sawyer/banksimulation/sharedabstractclasses/EndpointTemplate.cpp.o | /opt/homebrew/lib/libpistache.dylib
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk
   LINK_LIBRARIES = -Wl,-rpath,/opt/homebrew/Cellar/libpqxx/7.9.1/lib -Wl,-rpath,/opt/homebrew/Cellar/libevent/2.1.12_1/lib  /opt/homebrew/lib/libpistache.dylib  -levent  -lpqxx
   LINK_PATH = -L/opt/homebrew/Cellar/libpqxx/7.9.1/lib   -L/opt/homebrew/Cellar/libevent/2.1.12_1/lib

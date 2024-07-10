@@ -4,6 +4,7 @@
 #include "../sharedabstractclasses/EndpointTemplate.h"
 
 #include <iostream>
+#include <thread>
 #include "bankrequests.h"
 using namespace Pistache;
 class BankEndpoint : public EndpointTemplate
@@ -20,8 +21,8 @@ private:
         using namespace Rest;
         router = new Router();
         Routes::Get(*router, "/balance/:username", Routes::bind(&BankEndpoint::getBalance,this));
-        Routes::Post(*router, "/deposit/:username/:amt", Routes::bind(&BankEndpoint::deposit,this));
-        Routes::Post(*router, "/withdraw/:username/:amt", Routes::bind(&BankEndpoint::withdraw, this));
+        Routes::Post(*router, "/transact/:srcname/:destname/:amt", Routes::bind(&BankEndpoint::transact,this));
+        Routes::Get(*router, "/token/:srcname/:destname/:amt", Routes::bind(&BankEndpoint::getToken, this));
     }
     void getBalance(const Rest::Request& req, Http::ResponseWriter resp){
         auto uname = req.param(":username").as<std::string>();
@@ -30,31 +31,34 @@ private:
             resp.send(Http::Code::Not_Found);
         }
         else{resp.send(Http::Code::Ok, to_string(balance));}
+        sleep(2);
     }
-    void deposit(const Rest::Request& req, Http::ResponseWriter resp){
-        auto uname = req.param(":username").as<std::string>();
+    void transact(const Rest::Request& req, Http::ResponseWriter resp){
+        auto srcname = req.param(":srcname").as<string>();
+        auto destname = req.param(":destname").as<string>();
         double amt;
         try {
            amt = req.param(":amt").as<double>();
         }catch(exception &e){ 
             cout << e.what();
-            
-            return;}
+            return;
+        }
         string reqResp;
-        Http::Code code = requestHandler->deposit(uname,amt, reqResp);
+        Http::Code code = requestHandler->transact(srcname,destname,amt, reqResp);
         resp.send(code,reqResp);
     }
-    void withdraw(const Rest::Request& req, Http::ResponseWriter resp){
-        auto uname = req.param(":username").as<std::string>();
+    void getToken(const Rest::Request& req, Http::ResponseWriter resp){
+        auto srcname = req.param("srcname").as<string>();
+        auto destname = req.param("destname").as<string>();
         double amt;
         try {
             amt = req.param(":amt").as<double>();
         }catch(exception &e){
             cout << e.what();
-            return;}
-        string reqResp;
-        Http::Code code = requestHandler->withdraw(uname,amt, reqResp);
-        resp.send(code,reqResp);
+            return;
+        }
+        string token;
+        Http::Code code = requestHandler->
     }
     BankRequests* requestHandler;
 };

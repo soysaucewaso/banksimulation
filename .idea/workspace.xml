@@ -17,15 +17,16 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df6d8293-ecb8-4cd5-b685-a7e23e674b0b" name="Changes" comment="relocated pistache to library area, updated cmake started vendorapiserver">
-      <change afterPath="$PROJECT_DIR$/sharedabstractclasses/EndpointTemplate.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sharedabstractclasses/EndpointTemplate.h" afterDir="false" />
+    <list default="true" id="df6d8293-ecb8-4cd5-b685-a7e23e674b0b" name="Changes" comment="made a template Endpoint semi abstract class, still need to debug">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backendapi/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backendapi/bankapiserver.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/bankapiserver.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backendapi/bankrequests.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/bankrequests.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backendapi/bankrequests.h" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/bankrequests.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backendapi/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/cmake-build-debug/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backendapi/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/cmake-build-debug/.ninja_log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backendapi/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backendapi/cmake-build-debug/backendapi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backendapi/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/backendapi/cmake-build-debug/build.ninja" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendorapi/vendorapiserver.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/vendorapi/vendorapiserver.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -145,7 +146,7 @@
       <updated>1719702807976</updated>
       <workItem from="1719702809224" duration="30000" />
       <workItem from="1719702972343" duration="13488000" />
-      <workItem from="1719897819252" duration="26588000" />
+      <workItem from="1719897819252" duration="34395000" />
     </task>
     <task id="LOCAL-00001" summary="added folder for backend">
       <created>1719703034323</created>
@@ -210,7 +211,14 @@
       <option name="project" value="LOCAL" />
       <updated>1720474481411</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="made a template Endpoint semi abstract class, still need to debug">
+      <created>1720476428109</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1720476428109</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -239,6 +247,7 @@
     <MESSAGE value="deleted reduntant hellohandler" />
     <MESSAGE value="added http test case" />
     <MESSAGE value="relocated pistache to library area, updated cmake started vendorapiserver" />
-    <option name="LAST_COMMIT_MESSAGE" value="relocated pistache to library area, updated cmake started vendorapiserver" />
+    <MESSAGE value="made a template Endpoint semi abstract class, still need to debug" />
+    <option name="LAST_COMMIT_MESSAGE" value="made a template Endpoint semi abstract class, still need to debug" />
   </component>
 </project>

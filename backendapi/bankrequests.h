@@ -18,9 +18,9 @@ public:
     
     double getBalance(string &username);
 
-    Pistache::Http::Code withdraw(string &username, int amt, string& resp);
-
-    Pistache::Http::Code deposit(string &username, int amt, string& resp);
+    Pistache::Http::Code transact(string &srcname, string& destname, int amt, string& resp);
+    
+    Pistache::Http::Code getToken(string& srcname, string& destname, int amt, string& token);
     
 private:
     const string UPDATEQUERY = "UPDATE balance SET balance = $2 WHERE username = $1";

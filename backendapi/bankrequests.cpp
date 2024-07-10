@@ -17,54 +17,50 @@ double BankRequests::getBalance(std::string &username) {
     return bal;
 }
 
-Pistache::Http::Code BankRequests::withdraw(std::string &username, int amt, std::string &resp) {
+Pistache::Http::Code BankRequests::transact(std::string &srcname, std::string &destname, int amt, std::string &resp) {
     Guard g(lock);
     pqxx::work txn(*conn);
-    double bal = getBalanceHelper(username,txn);
-    double newBal = bal - amt;
+    double srcbal = getBalanceHelper(srcname,txn);
+    double destbal = getBalanceHelper(destname,txn);
+    double newBal = srcbal - amt;
+    bool withdrawSuccess = false;
     try{
-        if (bal == -1){
+        // validate withdrawal
+        if (srcbal == -1){
             resp = "Username not Found\n";
         }else if(newBal < 0){
-            resp = to_string(bal);
+            resp = "Transaction cancelled. Not enough funds: "+to_string(srcbal)+'\n';
         }else{
-            txn.exec_params(UPDATEQUERY,username,newBal);
-            resp = to_string(newBal);
+            withdrawSuccess = true;
+        }
+        // move money
+        if (withdrawSuccess) {
+            txn.exec_params(UPDATEQUERY, srcname, newBal);
+            if(destbal == -1){
+                const string addquery = "INSERT INTO balance (username, balance) VALUES ($1, $2)";
+                txn.exec_params(addquery,destname,amt);
+            }else{
+                double newDBal = destbal + amt;
+                txn.exec_params(UPDATEQUERY,destname,newDBal);
+            }
+            resp = "Transaction successful. "+srcname +" now has " + to_string(newBal)+'\n';
             txn.commit();
             return Pistache::Http::Code::Accepted;
+        }else{
+            txn.abort();
+            return Pistache::Http::Code::Bad_Request;
         }
     }catch(std::exception& e){
-        resp = "WITHDRAW DB error: " + string(e.what()) + '\n';
+        resp = "DB Transact error: " + string(e.what()) + '\n';
         cout <<  resp;
-        
-    }txn.commit();
-    return Pistache::Http::Code::Bad_Request;
-}
-
-Pistache::Http::Code BankRequests::deposit(string &username, int amt, string &resp) {
-    
-    Guard g(lock);
-    pqxx::work txn(*conn);
-    double bal = getBalanceHelper(username,txn);
-    try {
-        if (bal == -1) {
-            const string addquery = "INSERT INTO balance (username, balance) VALUES ($1, $2)";
-            txn.exec_params(addquery,username,amt);
-            resp = to_string(amt);
-        }else {
-            bal += amt;
-            txn.exec_params(UPDATEQUERY,username,bal);
-            resp = to_string(bal);
-        }
-        
-    } catch (const exception& e){
-        resp = "DEPOSIT DB error: " + string(e.what()) + '\n';
-        cout <<  resp;
-        txn.commit();
+        txn.abort();
         return Pistache::Http::Code::Bad_Request;
     }
-    txn.commit();
-    return Pistache::Http::Code::Accepted;
+    
+}
+Pistache::Http::Code BankRequests::getToken(string &srcname, string &destname, int amt, string &token) {
+    // its ok to generate a token for a bad transact since it will be rejected
+    
 }
 
 double BankRequests::getBalanceHelper(string &username, pqxx::work& txn) {
@@ -82,4 +78,6 @@ double BankRequests::getBalanceHelper(string &username, pqxx::work& txn) {
 void BankRequests::sanitizeString(std::string &str) {
     str = conn->esc(str);
 }
+
+
 
