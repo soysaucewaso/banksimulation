@@ -17,7 +17,6 @@ void EndpointTemplate::init(Address addr, Http::Endpoint::Options opts) {
 void EndpointTemplate::initEndpoint(Address addr, Http::Endpoint::Options opts) {
     Pistache::Http::Endpoint* server = new Http::Endpoint(addr);
     server->init(opts);
-
     server->setHandler(router->handler());
     server->serveThreaded();
 }

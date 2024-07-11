@@ -38,3 +38,6 @@
 1241	1289	1720645117136252870	backendapi	ac05527f5df2a1ae
 6	1189	1720645151834057445	CMakeFiles/backendapi.dir/bankrequests.cpp.o	d6609803b73f89bf
 1189	1238	1720645151887030744	backendapi	ac05527f5df2a1ae
+7	6201	1720732801626787957	CMakeFiles/backendapi.dir/Users/sawyer/banksimulation/sharedabstractclasses/EndpointTemplate.cpp.o	b60f396ab954cd88
+6	6648	1720732802078174157	CMakeFiles/backendapi.dir/bankapiserver.cpp.o	c5e48bb63a9beb86
+6648	9486	1720732804922501017	backendapi	ac05527f5df2a1ae

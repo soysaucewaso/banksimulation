@@ -72,9 +72,7 @@ int main(){
     EndpointTemplate* server = new BankEndpoint();
     server->init(addr,opts);
     
-    // tls
-    //server.useSSL();
-    //server.useSSLAuth();
+    
     
     
     std::this_thread::sleep_for(std::chrono::seconds(50));
